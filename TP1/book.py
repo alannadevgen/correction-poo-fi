@@ -28,7 +28,7 @@ class Book:
             self._is_borrowed = False
             print(f"The book {self.title} has been returned successfully.")
         else:
-            print(f"The book {self.title} is not borrowed.")
+            print(f"The book {self.title} is available.")
 
     def reserve(self):
         if self._is_borrowed:
@@ -48,7 +48,11 @@ class Book:
 
 
 # Exemple d'utilisation
-normal_people = Book("Normal people", "Sally Rooney", "Novel")
+normal_people = Book(
+    title="Normal people",
+    author="Sally Rooney",
+    genre="Novel",
+)
 normal_people.present()
 normal_people.borrow()
 normal_people.borrow()
