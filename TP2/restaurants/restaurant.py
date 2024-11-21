@@ -2,11 +2,17 @@ class Restaurant:
     def __init__(self):
         self.employees = []
 
-    def hire_employee(self, employee):
+    def hire_employee(
+        self,
+        employee,
+    ):
         self.employees.append(employee)
         print(f"{employee.name} {employee.surname} a été embauché(e).")
 
-    def fire_employee(self, registration_number):
+    def fire_employee(
+        self,
+        registration_number,
+    ):
         for employee in self.employees:
             if employee.registration_number == registration_number:
                 self.employees.remove(employee)

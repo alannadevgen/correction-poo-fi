@@ -1,7 +1,14 @@
 from employee import Employee
 
+
 class Waiter(Employee):
-    def __init__(self, name, surname, registration_number, tables_served=0):
+    def __init__(
+        self,
+        name,
+        surname,
+        registration_number,
+        tables_served=0,
+    ):
         super().__init__(name, surname, registration_number)
         self.tables_served = tables_served
 

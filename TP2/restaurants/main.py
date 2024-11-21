@@ -1,19 +1,40 @@
-from employee import Employee
-from waiter import Waiter
-from cook import Cook
 from cashier import Cashier
+from cook import Cook
+from employee import Employee
 from manager import Manager
 from restaurant import Restaurant
+from waiter import Waiter
+
 
 def main():
     # Création d'une instance de Restaurant
     restaurant = Restaurant()
 
     # Embauche de différents types d'employés
-    waiter = Waiter(name="Alice", surname="Dupont", registration_number="W001", tables_served=5)
-    cook = Cook(name="Bob", surname="Martin", registration_number="C001", specialty="Pâtisserie")
-    cashier = Cashier(name="Claire", surname="Durand", registration_number="Ca001", cash_register="Caisse 1")
-    manager = Manager(name="David", surname="Bernard", registration_number="M001", department="Service")
+    waiter = Waiter(
+        name="Alice",
+        surname="Dupont",
+        registration_number="W001",
+        tables_served=5,
+    )
+    cook = Cook(
+        name="Bob",
+        surname="Martin",
+        registration_number="C001",
+        specialty="Pâtisserie",
+    )
+    cashier = Cashier(
+        name="Claire",
+        surname="Durand",
+        registration_number="Ca001",
+        cash_register="Caisse 1",
+    )
+    manager = Manager(
+        name="David",
+        surname="Bernard",
+        registration_number="M001",
+        department="Service",
+    )
 
     # Ajouter les employés au restaurant
     restaurant.hire_employee(waiter)
@@ -45,6 +66,7 @@ def main():
     # Afficher la liste des employés après le licenciement
     print("\n--- Liste des employés après licenciement ---")
     restaurant.display_employees()
+
 
 if __name__ == "__main__":
     main()
