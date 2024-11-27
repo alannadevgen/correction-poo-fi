@@ -5,7 +5,7 @@ from math import sqrt, atan2, cos, sin
 
 class Point:
     def __init__(self, x, y):
-        '''Construit un point
+        """Construit un point
 
         Parameters
         ----------
@@ -13,22 +13,22 @@ class Point:
             abscisse du point
         y : float
             ordonnée du point
-        '''
+        """
         self.__x = x
         self.__y = y
 
     def __str__(self):
-        '''Représentation textuelle du point
+        """Représentation textuelle du point
 
         Returns
         -------
         str
             description du point
-        '''
+        """
         return '({}, {})'.format(self.__x, self.__y)
 
     def __eq__(self, autre_point):
-        '''Teste l'égalité de deux points
+        """Teste l'égalité de deux points
 
         Parameters
         ----------
@@ -39,62 +39,62 @@ class Point:
         -------
         bool
             True si et seulement si les coordonnées correspondent
-        '''
+        """
         return self.__x == autre_point.__x and self.__y == autre_point.__y
 
     def x(self):
-        '''Abscisse
+        """Abscisse du point.
 
         Returns
         -------
         float
-            abscisse du point
-        '''
+            Abscisse du point
+        """
         return self.__x
 
     def y(self):
-        '''Ordonnée
+        """Ordonnée du point.
 
         Returns
         -------
         float
-            ordonée du point
-        '''
+            Ordonnée du point
+        """
         return self.__y
 
     def r(self):
-        '''Distance en coordonnées polaires
+        """Distance en coordonnées polaires.
 
         Returns
         -------
         float
-            distance r à l'origine
-        '''
+            Distance r à l'origine
+        """
         return sqrt(self.__x ** 2 + self.__y ** 2)
 
     def t(self):
-        '''Angle en coordonnées polaires
+        """Angle en coordonnées polaires
 
         Returns
         -------
         float
             angle avec l'axe des abscisses
-        '''
+        """
         return atan2(self.__y, self.__x)
 
     def homothety(self, k):
-        '''Applique un homothétie au point
+        """Applique un homothétie au point
 
         Parameters
         ----------
         k : float
             le rapport d'homothétie à appliquer
-        '''
+        """
         self.__x *= k
         self.__y *= k
 
     def translation(self, dx, dy):
-        '''Applique une translation
+        """Applique une translation
 
         Parameters
         ----------
@@ -102,18 +102,18 @@ class Point:
             la translation selon l'axe horizontal
         dy : float
             la translation selon l'axe vertical
-        '''
+        """
         self.__x += dx
         self.__y += dy
 
     def rotation(self, a):
-        '''Applique une rotation par rapport à l'origine
+        """Applique une rotation par rapport à l'origine
 
         Parameters
         ----------
         a : float
             l'angle de rotation
-        '''
+        """
         r = self.r()
         t = self.t() + a
         self.__x = r * cos(t)
