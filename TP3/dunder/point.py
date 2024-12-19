@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from math import sqrt, atan2, cos, sin
+from math import atan2, cos, sin, sqrt
 
 
 class Point:
@@ -25,7 +25,7 @@ class Point:
         str
             description du point
         """
-        return '({}, {})'.format(self.__x, self.__y)
+        return "({}, {})".format(self.__x, self.__y)
 
     def __eq__(self, autre_point):
         """Teste l'égalité de deux points
@@ -70,7 +70,7 @@ class Point:
         float
             Distance r à l'origine
         """
-        return sqrt(self.__x ** 2 + self.__y ** 2)
+        return sqrt(self.__x**2 + self.__y**2)
 
     def t(self):
         """Angle en coordonnées polaires
